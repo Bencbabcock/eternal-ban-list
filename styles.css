@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  width: min(1200px, 88vw);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 2rem);
+  background: #071302;
+  color: #faf8f3;
+}
+
+main {
+  text-align: left;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #9BC285;
+  text-align: center;
+}
+
+h2 {
+  color: #9BC285;
+}
+
+h3 {
+  color: #5D784B;
+}
+
+code {
+  background: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+a {
+  color: #617F98;
+  font-family: inherit;
+}
+
+.text-and-figures {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.text-and-figures .text-block {
+  flex: 1;
+  min-width: 0;
+}
+
+.figure-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.figure-row figure {
+  flex: 0 1 calc((100% - 4 * 0.5rem) / 5);
+  margin: 0;
+  min-width: 0;
+}
+
+figure img {
+  border-radius: 10px;
+}
+
+.figure-row img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.figure-row figcaption {
+  font-size: 0.9em;
+  color: #9BC285;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.figure-row figure {
+  cursor: pointer;
+}
+
+/* Lightbox for enlarged figure */
+.figure-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(7, 19, 2, 0.9);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.figure-lightbox[aria-hidden="false"] {
+  display: flex;
+}
+
+.figure-lightbox__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  font-size: 2rem;
+  line-height: 1;
+  color: #faf8f3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.figure-lightbox__close:hover {
+  background: rgba(250, 248, 243, 0.1);
+}
+
+.figure-lightbox__content {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.figure-lightbox__img {
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 30px;
+}
+
+.figure-lightbox__caption {
+  color: #9BC285;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .text-and-figures {
+    flex-direction: column;
+  }
+
+  .figure-row {
+    max-width: none;
+  }
+}
