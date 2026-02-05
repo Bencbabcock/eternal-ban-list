@@ -41,6 +41,11 @@ h3 {
   color: var(--color-secondary);
 }
 
+/* Offset scroll targets to account for sticky search bar */
+h2[id], h3[id] {
+  scroll-margin-top: 6.3rem;
+}
+
 code {
   background: var(--color-code-bg);
   padding: 0.2em 0.4em;
@@ -153,6 +158,45 @@ a {
   min-width: 0;
 }
 
+.figures-three-with-text {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin: 1rem 0 1.5rem;
+}
+
+.figures-three-with-text .figures-group {
+  display: flex;
+  gap: 0.5rem;
+  flex: 0 0 calc(3 * (100% - 4 * 0.5rem) / 5 + 1rem);
+}
+
+.figures-three-with-text figure {
+  flex: 1;
+  margin: 0;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.figures-three-with-text figure img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.figures-three-with-text figure figcaption {
+  font-size: 0.9em;
+  color: var(--color-primary);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.figures-three-with-text .text-content {
+  flex: 1;
+  min-width: 0;
+}
+
 figure {
   margin-bottom: 1.5rem;
 }
@@ -254,6 +298,7 @@ figure img {
   top: 1rem;
   z-index: 100;
   backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .search-input-wrapper {
@@ -377,5 +422,14 @@ mark.search-highlight.current {
   .figures-two-with-text .figures-group {
     flex: 0 0 auto;
     max-width: 400px;
+  }
+
+  .figures-three-with-text {
+    flex-direction: column;
+  }
+
+  .figures-three-with-text .figures-group {
+    flex: 0 0 auto;
+    max-width: 100%;
   }
 }
