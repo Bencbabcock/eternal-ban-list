@@ -18,7 +18,7 @@
     document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('.figure-row figure').forEach(function (figure) {
+  document.querySelectorAll('.figure-row figure, .figure-with-text figure, .figures-two-with-text figure').forEach(function (figure) {
     figure.addEventListener('click', function () {
       var img = figure.querySelector('img');
       var cap = figure.querySelector('figcaption');
